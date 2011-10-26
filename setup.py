@@ -152,9 +152,11 @@ c_ext = Feature(
                                     'bson/buffer.c',
                                     'bson/encoding_helpers.c'])])
 
+sys.argv.append("--no_ext")
 if "--no_ext" in sys.argv:
     sys.argv = [x for x in sys.argv if x != "--no_ext"]
     features = {}
+
 elif (sys.platform.startswith("java") or
       sys.platform == "cli" or
       "PyPy" in sys.version):
